@@ -26,6 +26,7 @@
       "io.github.yunivers.nihilo.events.init.InitItems",
       "io.github.yunivers.nihilo.events.init.InitTextures",
       "io.github.yunivers.nihilo.events.init.InitEntityRenderers",
+      "io.github.yunivers.nihilo.events.DispenserListener",
       "io.github.yunivers.nihilo.registries.ColorRegistry",
       "io.github.yunivers.nihilo.registries.CompostRegistry",
       "io.github.yunivers.nihilo.registries.HeatRegistry",
