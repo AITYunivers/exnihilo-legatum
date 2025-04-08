@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b b",
+    "b b",
+    "bsb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:stone"
+    },
+    "s": {
+      "item": "minecraft:slab"
+    }
+  },
+  "result": {
+    "item": "nihilo:stone_barrel",
+    "count": 1
+  }
+}

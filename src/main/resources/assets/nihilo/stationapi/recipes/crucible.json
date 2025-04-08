@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "s s",
+    "s s",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "nihilo:porcelain_clay"
+    }
+  },
+  "result": {
+    "item": "nihilo:crucible_unfired",
+    "count": 1
+  }
+}

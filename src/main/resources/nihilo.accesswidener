@@ -1,0 +1,5 @@
+accessWidener v2 named
+
+transitive-accessible	field	net/minecraft/client/render/entity/ProjectileEntityRenderer itemTextureId   I
+
+transitive-accessible	field	net/minecraft/item/ToolItem miningSpeed F

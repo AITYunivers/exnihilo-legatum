@@ -1,36 +1,52 @@
 {
   "schemaVersion": 1,
-  "id": "%s",
+  "id": "nihilo",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Ex Nihilo: Legatum",
+  "description": "From nothing.",
   "authors": [
-    "Me!"
+    "Yunivers"
   ],
   "contact": {
-    "homepage": "https://glass-launcher.net/",
-    "sources": "https://github.com/calmilamsy/stationapi-example-mod"
+    "homepage": "https://github.com/AITYunivers/exnihilo-legatum",
+    "sources": "https://github.com/AITYunivers/exnihilo-legatum",
+    "issues": "https://github.com/AITYunivers/exnihilo-legatum/issues"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/%s/icon.png",
+  "license": "MIT",
+  "icon": "assets/nihilo/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "%s.events.init.InitListener"
+      "io.github.yunivers.nihilo.events.init.InitBlocks",
+      "io.github.yunivers.nihilo.events.init.InitBlockEntities",
+      "io.github.yunivers.nihilo.events.init.InitBlockEntityRenderers",
+      "io.github.yunivers.nihilo.events.init.InitItems",
+      "io.github.yunivers.nihilo.events.init.InitTextures",
+      "io.github.yunivers.nihilo.events.init.InitEntityRenderers",
+      "io.github.yunivers.nihilo.registries.ColorRegistry",
+      "io.github.yunivers.nihilo.registries.CompostRegistry",
+      "io.github.yunivers.nihilo.registries.HeatRegistry",
+      "io.github.yunivers.nihilo.registries.CrucibleRegistry",
+      "io.github.yunivers.nihilo.registries.HammerRegistry"
     ],
     "stationapi:event_bus_client": [
     ],
     "stationapi:event_bus_server": [
+    ],
+    "gcapi3": [
+      "io.github.yunivers.nihilo.config.Config"
     ]
   },
   "mixins": [
-    "%s.mixins.json"
+    "nihilo.mixins.json"
   ],
+  "accessWidener" : "nihilo.accesswidener",
 
   "depends": {
-    "minecraft": "1.0.0-beta.7.3"
+    "minecraft": "1.0.0-beta.7.3",
+    "stationfluidapi": "*"
   }
 }

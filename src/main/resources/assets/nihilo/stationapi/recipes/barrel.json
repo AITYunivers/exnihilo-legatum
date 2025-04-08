@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b b",
+    "b b",
+    "bsb"
+  ],
+  "key": {
+    "b": {
+      "tag": "minecraft:planks"
+    },
+    "s": {
+      "item": "minecraft:slab",
+      "damage": 2
+    }
+  },
+  "result": {
+    "item": "nihilo:barrel",
+    "count": 1
+  }
+}

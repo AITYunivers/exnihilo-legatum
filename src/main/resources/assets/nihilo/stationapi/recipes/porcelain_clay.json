@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:dye",
+      "damage": 15
+    }
+  ],
+  "result": {
+    "item": "nihilo:porcelain_clay",
+    "count": 1
+  }
+}

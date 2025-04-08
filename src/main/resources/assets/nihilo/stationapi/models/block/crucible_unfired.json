@@ -1,0 +1,6 @@
+{
+    "parent": "nihilo:block/crucible",
+    "textures": {
+        "texture": "nihilo:block/crucible_unfired"
+    }
+}

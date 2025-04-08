@@ -1,0 +1,19 @@
+# @ is a shorthand for the current mod id, which is nihilo. E.g: tile.@.redclay.name
+
+# Blocks
+tile.nihilo.barrel.name=Barrel
+tile.nihilo.stone_barrel.name=Stone Barrel
+tile.nihilo.crucible.name=Crucible
+tile.nihilo.crucible_unfired.name=Unfired Crucible
+tile.nihilo.dust.name=Dust
+
+# Items
+item.nihilo.porcelain_clay.name=Porcelain Clay
+item.nihilo.stone_pebble.name=Stone Pebble
+
+# Hammers
+item.nihilo.hammer_wood.name=Wooden Hammer
+item.nihilo.hammer_stone.name=Stone Hammer
+item.nihilo.hammer_iron.name=Iron Hammer
+item.nihilo.hammer_gold.name=Gold Hammer
+item.nihilo.hammer_diamond.name=Diamond Hammer

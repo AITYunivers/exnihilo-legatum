@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "nihilo:crucible_unfired"
+  },
+  "result": {
+    "item": "nihilo:crucible",
+    "count": 1
+  }
+}
