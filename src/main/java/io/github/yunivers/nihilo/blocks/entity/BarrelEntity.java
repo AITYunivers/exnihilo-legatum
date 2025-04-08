@@ -1,6 +1,7 @@
 package io.github.yunivers.nihilo.blocks.entity;
 
 import io.github.yunivers.nihilo.config.Config;
+import io.github.yunivers.nihilo.events.init.InitBlocks;
 import io.github.yunivers.nihilo.registries.ColorRegistry;
 import io.github.yunivers.nihilo.registries.CompostRegistry;
 import io.github.yunivers.nihilo.registries.helpers.Color;
@@ -259,6 +260,31 @@ public class BarrelEntity extends BlockEntity implements Inventory
             fluid = new FluidStack(heldItem);
             state = BarrelState.FLUID;
             return true;
+        }
+        return false;
+    }
+
+    public boolean tryCustomRecipe(PlayerEntity player, ItemStack heldItem)
+    {
+        if (fluid.amount >= 1000)
+        {
+            if (fluid.fluid == Block.WATER)
+            {
+                if (heldItem.itemId == Item.BLOCK_ITEMS.get(InitBlocks.DUST).id);
+                {
+                    heldItem.count -= 1;
+                    ItemEntity itemEntity = new ItemEntity(world, x, y + 1, z, new ItemStack(Block.CLAY, 1));
+                    itemEntity.velocityY = 0.2F;
+                    world.spawnEntity(itemEntity);
+                    fluid.amount -= 1000;
+                    if (fluid.amount <= 0)
+                    {
+                        state = BarrelState.EMPTY;
+                        fluid = null;
+                    }
+                    return true;
+                }
+            }
         }
         return false;
     }

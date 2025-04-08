@@ -17,3 +17,7 @@ item.nihilo.hammer_stone.name=Stone Hammer
 item.nihilo.hammer_iron.name=Iron Hammer
 item.nihilo.hammer_gold.name=Gold Hammer
 item.nihilo.hammer_diamond.name=Diamond Hammer
+
+# Crooks
+item.nihilo.crook_wood.name=Crook
+item.nihilo.crook_bone.name=Bone Crook

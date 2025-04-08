@@ -50,6 +50,8 @@ public class Barrel extends TemplateBlockWithEntity
                 return true;
             if (entity.tryBucket(player, heldItem))
                 return true;
+            if (entity.tryCustomRecipe(player, heldItem))
+                return true;
         }
         if (entity.tryExtractByHand())
             return true;

@@ -1,6 +1,7 @@
 package io.github.yunivers.nihilo.events.init;
 
 import io.github.yunivers.nihilo.items.Pebble;
+import io.github.yunivers.nihilo.items.tools.Crook;
 import io.github.yunivers.nihilo.items.tools.Hammer;
 import io.github.yunivers.nihilo.registries.events.ColorRegistryEvent;
 import io.github.yunivers.nihilo.registries.events.CompostRegistryEvent;
@@ -25,6 +26,8 @@ public class InitItems
     public static Item HAMMER_IRON;
     public static Item HAMMER_GOLD;
     public static Item HAMMER_DIAMOND;
+    public static Item CROOK_WOOD;
+    public static Item CROOK_BONE;
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {
@@ -43,6 +46,11 @@ public class InitItems
                 .setTranslationKey(NAMESPACE, "hammer_gold");
         HAMMER_DIAMOND = new Hammer(NAMESPACE.id("hammer_diamond"), ToolMaterial.DIAMOND)
                 .setTranslationKey(NAMESPACE, "hammer_diamond");
+
+        CROOK_WOOD = new Crook(NAMESPACE.id("crook_wood"), ToolMaterial.WOOD)
+                .setTranslationKey(NAMESPACE, "crook_wood");
+        CROOK_BONE = new Crook(NAMESPACE.id("crook_bone"), ToolMaterial.STONE)
+                .setTranslationKey(NAMESPACE, "crook_bone");
 
 
         // Call Registries

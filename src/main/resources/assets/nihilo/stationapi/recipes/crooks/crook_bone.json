@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ss ",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:bone"
+    }
+  },
+  "result": {
+    "item": "nihilo:crook_bone",
+    "count": 1
+  }
+}
