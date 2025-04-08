@@ -31,7 +31,8 @@
       "io.github.yunivers.nihilo.registries.CompostRegistry",
       "io.github.yunivers.nihilo.registries.HeatRegistry",
       "io.github.yunivers.nihilo.registries.CrucibleRegistry",
-      "io.github.yunivers.nihilo.registries.HammerRegistry"
+      "io.github.yunivers.nihilo.registries.HammerRegistry",
+      "io.github.yunivers.nihilo.registries.SieveRegistry"
     ],
     "stationapi:event_bus_client": [
     ],

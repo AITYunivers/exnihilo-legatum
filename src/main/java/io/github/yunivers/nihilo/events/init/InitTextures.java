@@ -12,6 +12,7 @@ public class InitTextures
     // Textures
 
     public static int BARREL_COMPOST_TEX;
+    public static int DUST;
     public static int STONE_PEBBEL;
 
     @EventListener
@@ -20,6 +21,7 @@ public class InitTextures
         ExpandableAtlas guiItemsAtlas = Atlases.getGuiItems();
 
         BARREL_COMPOST_TEX = terrainAtlas.addTexture(NAMESPACE.id("block/barrel_compost")).index;
+        DUST = guiItemsAtlas.addTexture(NAMESPACE.id("block/dust")).index;
         STONE_PEBBEL = guiItemsAtlas.addTexture(NAMESPACE.id("item/stone_pebble")).index;
     }
 }

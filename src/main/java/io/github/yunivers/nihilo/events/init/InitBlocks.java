@@ -1,9 +1,6 @@
 package io.github.yunivers.nihilo.events.init;
 
-import io.github.yunivers.nihilo.blocks.Barrel;
-import io.github.yunivers.nihilo.blocks.Crucible;
-import io.github.yunivers.nihilo.blocks.CrucibleUnfired;
-import io.github.yunivers.nihilo.blocks.StoneBarrel;
+import io.github.yunivers.nihilo.blocks.*;
 import io.github.yunivers.nihilo.registries.events.CrucibleRegistryEvent;
 import io.github.yunivers.nihilo.registries.events.HammerRegistryEvent;
 import io.github.yunivers.nihilo.registries.events.HeatRegistryEvent;
@@ -23,6 +20,7 @@ public class InitBlocks
     public static Block BARREL_STONE;
     public static Block CRUCIBLE;
     public static Block CRUCIBLE_UNFIRED;
+    public static Block SIEVE;
     public static Block DUST;
 
     @EventListener
@@ -40,7 +38,10 @@ public class InitBlocks
         CRUCIBLE_UNFIRED = new CrucibleUnfired(NAMESPACE.id("crucible_unfired"))
                 .setTranslationKey(NAMESPACE, "crucible_unfired");
 
-        DUST = new TemplateBlock(NAMESPACE.id("dust"), Material.CLAY)
+        SIEVE = new Sieve(NAMESPACE.id("sieve"))
+                .setTranslationKey(NAMESPACE, "sieve");
+
+        DUST = new TemplateTextureBlock(NAMESPACE.id("dust"), Material.CLAY, NAMESPACE.id("block/dust"))
                 .setHardness(0.4F)
                 .setSoundGroup(Block.SAND_SOUND_GROUP)
                 .setTranslationKey(NAMESPACE, "dust");

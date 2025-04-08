@@ -29,7 +29,7 @@ public class BarrelRenderer extends BlockEntityRenderer
                 GL11.glEnable(GL11.GL_BLEND);
                 GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 
-                float light = barrel.getBlock().getLuminance(blockEntity.world, blockEntity.x, blockEntity.y, blockEntity.z);
+                float light = barrel.getBlock().getLuminance(blockEntity.world, blockEntity.x, blockEntity.y + 1, blockEntity.z);
                 StationRenderAPI.getBakedModelManager().getAtlas(Atlases.GAME_ATLAS_TEXTURE).bindTexture();
                 Sprite sprite = Atlases.getTerrain().getTexture(InitTextures.BARREL_COMPOST_TEX).getSprite();;
                 double height = 0.9;

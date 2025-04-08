@@ -1,0 +1,185 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"mesh": "nihilo:block/sieve_mesh",
+		"wood": "minecraft:block/oak_planks",
+		"particle": "#wood"
+	},
+	"elements": [
+		{
+			"name": "North East Leg",
+			"from": [14, 0, 1],
+			"to": [15, 10, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 0]},
+			"faces": {
+				"north": {"uv": [3, 9, 13, 10], "rotation": 90, "texture": "#wood"},
+				"east": {"uv": [3, 8, 13, 9], "rotation": 90, "texture": "#wood"},
+				"south": {"uv": [3, 10, 13, 11], "rotation": 90, "texture": "#wood"},
+				"west": {"uv": [3, 13, 13, 14], "rotation": 90, "texture": "#wood"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#wood"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "North West Leg",
+			"from": [1, 0, 1],
+			"to": [2, 10, 2],
+			"faces": {
+				"north": {"uv": [3, 1, 13, 2], "rotation": 90, "texture": "#wood"},
+				"east": {"uv": [3, 0, 13, 1], "rotation": 90, "texture": "#wood"},
+				"south": {"uv": [3, 2, 13, 3], "rotation": 90, "texture": "#wood"},
+				"west": {"uv": [3, 4, 13, 5], "rotation": 90, "texture": "#wood"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#wood"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "South East Leg",
+			"from": [14, 0, 14],
+			"to": [15, 10, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [13, 0, 13]},
+			"faces": {
+				"north": {"uv": [3, 6, 13, 7], "rotation": 90, "texture": "#wood"},
+				"east": {"uv": [3, 5, 13, 6], "rotation": 90, "texture": "#wood"},
+				"south": {"uv": [3, 12, 13, 13], "rotation": 90, "texture": "#wood"},
+				"west": {"uv": [3, 14, 13, 15], "rotation": 90, "texture": "#wood"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#wood"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "South West Leg",
+			"from": [1, 0, 14],
+			"to": [2, 10, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 13]},
+			"faces": {
+				"north": {"uv": [6, 8, 16, 9], "rotation": 90, "texture": "#wood"},
+				"east": {"uv": [0, 6, 10, 7], "rotation": 90, "texture": "#wood"},
+				"south": {"uv": [0, 10, 10, 11], "rotation": 90, "texture": "#wood"},
+				"west": {"uv": [6, 12, 16, 13], "rotation": 90, "texture": "#wood"},
+				"up": {"uv": [0, 0, 1, 1], "texture": "#wood"},
+				"down": {"uv": [0, 0, 1, 1], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "North Base",
+			"from": [0, 10, 0],
+			"to": [16, 16, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 10, 0]},
+			"faces": {
+				"north": {"uv": [0, 2, 16, 8], "texture": "#wood"},
+				"east": {"uv": [15, 2, 16, 8], "texture": "#wood"},
+				"south": {"uv": [0, 2, 16, 8], "texture": "#wood"},
+				"west": {"uv": [0, 2, 1, 8], "texture": "#wood"},
+				"up": {"uv": [0, 1, 16, 2], "texture": "#wood"},
+				"down": {"uv": [0, 11, 16, 12], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "South Base",
+			"from": [0, 10, 15],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 10, 15]},
+			"faces": {
+				"north": {"uv": [0, 2, 16, 8], "texture": "#wood"},
+				"east": {"uv": [0, 2, 1, 8], "texture": "#wood"},
+				"south": {"uv": [0, 2, 16, 8], "texture": "#wood"},
+				"west": {"uv": [15, 2, 16, 8], "texture": "#wood"},
+				"up": {"uv": [0, 1, 16, 2], "texture": "#wood"},
+				"down": {"uv": [0, 11, 16, 12], "texture": "#wood"}
+			}
+		},
+		{
+			"name": "East Base",
+			"from": [15, 10, 1],
+			"to": [16, 16, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [15, 10, 15]},
+			"faces": {
+				"north": {"uv": [0, 2, 1, 8], "texture": "#wood"},
+				"east": {"uv": [1, 2, 15, 8], "texture": "#wood"},
+				"south": {"uv": [0, 2, 1, 8], "texture": "#wood"},
+				"west": {"uv": [1, 2, 15, 8], "texture": "#wood"},
+				"up": {"uv": [1, 1, 15, 2], "rotation": 270, "texture": "#wood"},
+				"down": {"uv": [1, 11, 15, 12], "rotation": 90, "texture": "#wood"}
+			}
+		},
+		{
+			"name": "West Base",
+			"from": [0, 10, 1],
+			"to": [1, 16, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 10, 15]},
+			"faces": {
+				"north": {"uv": [0, 2, 1, 8], "texture": "#wood"},
+				"east": {"uv": [1, 2, 15, 8], "texture": "#wood"},
+				"south": {"uv": [0, 2, 1, 8], "texture": "#wood"},
+				"west": {"uv": [1, 2, 15, 8], "texture": "#wood"},
+				"up": {"uv": [1, 1, 15, 2], "rotation": 270, "texture": "#wood"},
+				"down": {"uv": [1, 11, 15, 12], "rotation": 90, "texture": "#wood"}
+			}
+		},
+		{
+			"name": "Mesh",
+			"from": [0.5, 11, 0.5],
+			"to": [15.5, 11, 15.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 9, 0]},
+			"faces": {
+				"north": {"uv": [0.5, 0.5, 1, 1], "texture": "#mesh"},
+				"east": {"uv": [0.5, 0.5, 1, 1], "texture": "#mesh"},
+				"south": {"uv": [0.5, 0.5, 1, 1], "texture": "#mesh"},
+				"west": {"uv": [0.5, 0.5, 1, 1], "texture": "#mesh"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#mesh"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#mesh"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 1.75, 0.5],
+			"scale": [0.28, 0.28, 0.28]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 1.75, 0.5],
+			"scale": [0.28, 0.28, 0.28]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -42, 1],
+			"translation": [0, -2.25, 0],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -42, 1],
+			"translation": [0, -2.25, 0],
+			"scale": [0.6, 0.6, 0.6]
+		},
+		"ground": {
+			"scale": [0.3, 0.3, 0.3]
+		},
+		"gui": {
+			"rotation": [25, 45, 0],
+			"scale": [0.64, 0.64, 0.64]
+		},
+		"head": {
+			"scale": [0.93, 0.93, 0.93]
+		},
+		"fixed": {
+			"scale": [0.5, 0.5, 0.5]
+		}
+	},
+	"groups": [
+		{
+			"name": "Legs",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		},
+		{
+			"name": "Base",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [4, 5, 6, 7]
+		},
+		8
+	]
+}

@@ -166,7 +166,7 @@ public class BarrelEntity extends BlockEntity implements Inventory
     @Override
     public void setStack(int slot, ItemStack stack) {
         if (slot == 0) {
-            slotStack = stack;
+            slotStack = stack.split(1);
         }
     }
 

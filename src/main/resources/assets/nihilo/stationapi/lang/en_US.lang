@@ -5,11 +5,13 @@ tile.nihilo.barrel.name=Barrel
 tile.nihilo.stone_barrel.name=Stone Barrel
 tile.nihilo.crucible.name=Crucible
 tile.nihilo.crucible_unfired.name=Unfired Crucible
+tile.nihilo.sieve.name=Sieve
 tile.nihilo.dust.name=Dust
 
 # Items
 item.nihilo.porcelain_clay.name=Porcelain Clay
 item.nihilo.stone_pebble.name=Stone Pebble
+item.nihilo.mesh.name=Silk Mesh
 
 # Hammers
 item.nihilo.hammer_wood.name=Wooden Hammer

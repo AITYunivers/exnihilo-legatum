@@ -6,6 +6,7 @@ import io.github.yunivers.nihilo.items.tools.Hammer;
 import io.github.yunivers.nihilo.registries.events.ColorRegistryEvent;
 import io.github.yunivers.nihilo.registries.events.CompostRegistryEvent;
 import io.github.yunivers.nihilo.registries.events.HammerRegistryEvent;
+import io.github.yunivers.nihilo.registries.events.SieveRegistryEvent;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolMaterial;
@@ -21,6 +22,7 @@ public class InitItems
 
     public static Item PORCELAIN_CLAY;
     public static Item STONE_PEBBLE;
+    public static Item SILK_MESH;
     public static Item HAMMER_WOOD;
     public static Item HAMMER_STONE;
     public static Item HAMMER_IRON;
@@ -35,6 +37,8 @@ public class InitItems
                 .setTranslationKey(NAMESPACE, "porcelain_clay");
         STONE_PEBBLE = new Pebble(NAMESPACE.id("stone_pebble"))
                 .setTranslationKey(NAMESPACE, "stone_pebble");
+        SILK_MESH = new TemplateItem(NAMESPACE.id("mesh"))
+                .setTranslationKey(NAMESPACE, "mesh");
 
         HAMMER_WOOD = new Hammer(NAMESPACE.id("hammer_wood"), ToolMaterial.WOOD)
                 .setTranslationKey(NAMESPACE, "hammer_wood");
@@ -56,5 +60,6 @@ public class InitItems
         // Call Registries
         StationAPI.EVENT_BUS.post(new ColorRegistryEvent());
         StationAPI.EVENT_BUS.post(new CompostRegistryEvent());
+        StationAPI.EVENT_BUS.post(new SieveRegistryEvent());
     }
 }

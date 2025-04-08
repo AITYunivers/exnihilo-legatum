@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "pmp",
+    "pmp",
+    "s s"
+  ],
+  "key": {
+    "p": {
+      "tag": "minecraft:planks"
+    },
+    "m": {
+      "item": "nihilo:mesh"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "nihilo:sieve",
+    "count": 1
+  }
+}
