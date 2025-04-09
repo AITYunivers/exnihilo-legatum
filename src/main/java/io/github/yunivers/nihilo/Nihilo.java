@@ -12,6 +12,7 @@ import io.github.yunivers.nihilo.client.render.entity.CustomProjectileEntityRend
 import io.github.yunivers.nihilo.entity.PebbleEntity;
 import io.github.yunivers.nihilo.items.Pebble;
 import io.github.yunivers.nihilo.registries.events.*;
+import net.fabricmc.loader.api.FabricLoader;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -23,6 +24,7 @@ import net.modificationstation.stationapi.api.client.texture.atlas.Atlases;
 import net.modificationstation.stationapi.api.client.texture.atlas.ExpandableAtlas;
 import net.modificationstation.stationapi.api.event.block.entity.BlockEntityRegisterEvent;
 import net.modificationstation.stationapi.api.event.mod.InitEvent;
+import net.modificationstation.stationapi.api.event.mod.PostInitEvent;
 import net.modificationstation.stationapi.api.event.registry.BlockRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.EntrypointManager;
@@ -43,5 +45,11 @@ public class Nihilo
     static
     {
         EntrypointManager.registerLookup(MethodHandles.lookup());
+    }
+
+    @EventListener
+    public void postInit(PostInitEvent event)
+    {
+
     }
 }

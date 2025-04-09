@@ -64,6 +64,17 @@ public class HammerRegistry extends SimpleRegistry<Smashable>
         return blocks.toArray(new Block[0]);
     }
 
+    public static ArrayList<Smashable> getSmashables()
+    {
+        ArrayList<Smashable> smashables = new ArrayList<>();
+
+        for (Smashable reward : INSTANCE) {
+            smashables.add(reward);
+        }
+
+        return smashables;
+    }
+
     public static String nameOf(Block block)
     {
         return Objects.requireNonNull(BlockRegistry.INSTANCE.getId(block)).path + "." + INSTANCE.size();

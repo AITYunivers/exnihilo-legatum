@@ -23,3 +23,6 @@ item.nihilo.hammer_diamond.name=Diamond Hammer
 # Crooks
 item.nihilo.crook_wood.name=Crook
 item.nihilo.crook_bone.name=Bone Crook
+
+# Always More Items
+gui.nihilo.category.hammer=Ex Nihilo Hammer

@@ -61,5 +61,6 @@ public class InitItems
         StationAPI.EVENT_BUS.post(new ColorRegistryEvent());
         StationAPI.EVENT_BUS.post(new CompostRegistryEvent());
         StationAPI.EVENT_BUS.post(new SieveRegistryEvent());
+        StationAPI.EVENT_BUS.post(new HammerRegistryEvent());
     }
 }

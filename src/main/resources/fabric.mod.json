@@ -32,7 +32,8 @@
       "io.github.yunivers.nihilo.registries.HeatRegistry",
       "io.github.yunivers.nihilo.registries.CrucibleRegistry",
       "io.github.yunivers.nihilo.registries.HammerRegistry",
-      "io.github.yunivers.nihilo.registries.SieveRegistry"
+      "io.github.yunivers.nihilo.registries.SieveRegistry",
+      "io.github.yunivers.nihilo.Nihilo"
     ],
     "stationapi:event_bus_client": [
     ],
@@ -40,6 +41,9 @@
     ],
     "gcapi3": [
       "io.github.yunivers.nihilo.config.Config"
+    ],
+    "alwaysmoreitems:plugin": [
+      "io.github.yunivers.nihilo.compatibility.ami.NihiloAMIPlugin"
     ]
   },
   "mixins": [

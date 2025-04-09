@@ -49,6 +49,5 @@ public class InitBlocks
         // Call Registries
         StationAPI.EVENT_BUS.post(new HeatRegistryEvent());
         StationAPI.EVENT_BUS.post(new CrucibleRegistryEvent());
-        StationAPI.EVENT_BUS.post(new HammerRegistryEvent());
     }
 }
