@@ -16,6 +16,7 @@ import net.modificationstation.stationapi.api.mod.entrypoint.EventBusPolicy;
 import net.modificationstation.stationapi.api.registry.*;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -102,6 +103,20 @@ public class HammerRegistry extends SimpleRegistry<Smashable>
 
         // Sandstone
             .accept(nameOf(Block.SANDSTONE), new Smashable(Block.SANDSTONE, new ItemStack(Block.SAND), 1, 0))
+
+        // Info test
+            .accept(nameOf(Block.DIAMOND_BLOCK), new Smashable(Block.DIAMOND_BLOCK, new ItemStack(Block.COAL_ORE), 1, 0) {
+                @Override
+                public @Nullable String getConditions() {
+                    return "This sounds about right.";
+                }
+            })
+            .accept(nameOf(Block.DIAMOND_BLOCK), new Smashable(Block.DIAMOND_BLOCK, new ItemStack(Block.COAL_ORE), 1, 0) {
+                @Override
+                public @Nullable String getConditions() {
+                    return "This sounds about right.";
+                }
+            })
 
         // TODO: Netherrack Gravel
         ;

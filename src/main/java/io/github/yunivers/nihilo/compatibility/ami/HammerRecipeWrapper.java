@@ -47,6 +47,10 @@ public class HammerRecipeWrapper implements RecipeWrapper
 
     @Override
     public void drawInfo(@NotNull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+        String conditions = smashable.getConditions();
+        if (conditions != null && !conditions.isEmpty()) {
+            minecraft.textRenderer.drawWithShadow(conditions, 83 - (minecraft.textRenderer.getWidth(conditions) / 2), 31 + 18 + 2, -1);
+        }
         ItemStack focus = ((RecipesGuiAccessor) OverlayScreen.INSTANCE.recipesGui).getLogic().getFocus().getStack();
         if (focus == null) {
             return;
@@ -61,11 +65,11 @@ public class HammerRecipeWrapper implements RecipeWrapper
             List<ItemStack> results = smashable.getResults();
             for (int i = 0; i < results.size(); i++) {
                 if (results.get(i).isItemEqual(focus)) {
-                    xOffset = 2 + (18 * i);
+                    xOffset = 18 * i;
                     break;
                 }
             }
-            yOffset = 36;
+            yOffset = 33;
         }
         if (xOffset == 0) {
             return;
