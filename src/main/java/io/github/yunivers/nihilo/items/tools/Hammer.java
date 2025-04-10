@@ -60,6 +60,7 @@ public class Hammer extends TemplateToolItem
                         newItemEntity.velocityX = miner.world.random.nextGaussian() * f3;
                         newItemEntity.velocityY = 0.2d;
                         newItemEntity.velocityZ = miner.world.random.nextGaussian() * f3;
+                        newItemEntity.pickupDelay = 10;
 
                         miner.world.spawnEntity(newItemEntity);
                     }
