@@ -46,8 +46,31 @@ public class HammerRecipeWrapper implements RecipeWrapper
     }
 
     @Override
-    public void drawInfo(@NotNull Minecraft minecraft, int i, int i1, int i2, int i3) {
-
+    public void drawInfo(@NotNull Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+        ItemStack focus = ((RecipesGuiAccessor) OverlayScreen.INSTANCE.recipesGui).getLogic().getFocus().getStack();
+        if (focus == null) {
+            return;
+        }
+        int xOffset = 0;
+        int yOffset;
+        if (focus.getItem() instanceof BlockItem blockItem && smashable.source == blockItem.getBlock()) {
+            xOffset = 73;
+            yOffset = 3;
+        }
+        else {
+            List<ItemStack> results = smashable.getResults();
+            for (int i = 0; i < results.size(); i++) {
+                if (results.get(i).isItemEqual(focus)) {
+                    xOffset = 2 + (18 * i);
+                    break;
+                }
+            }
+            yOffset = 36;
+        }
+        if (xOffset == 0) {
+            return;
+        }
+        focusHighlight.draw(minecraft, xOffset, yOffset);
     }
 
     @Override
