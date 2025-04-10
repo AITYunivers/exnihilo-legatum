@@ -24,7 +24,7 @@ import java.util.Objects;
 public class HammerRegistry extends SimpleRegistry<Smashable>
 {
     public static final RegistryKey<Registry<Smashable>> KEY = RegistryKey.ofRegistry(Nihilo.NAMESPACE.id("smashable"));
-    public static final HammerRegistry INSTANCE = Registries.create(KEY, new HammerRegistry(), registry -> new Smashable(null, (Item)null, 0, 0), Lifecycle.experimental());
+    public static final HammerRegistry INSTANCE = Registries.create(KEY, new HammerRegistry(), registry -> null, Lifecycle.experimental());
 
     public HammerRegistry() {
         super(KEY, Lifecycle.experimental(), false);
