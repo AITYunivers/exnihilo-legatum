@@ -24,6 +24,6 @@ public class HammerRecipeHandler implements RecipeHandler<Smashable>
 
     @Override
     public boolean isRecipeValid(@NotNull Smashable recipe) {
-        return recipe.hasOutput();
+        return recipe.isValid();
     }
 }

@@ -61,9 +61,9 @@ public class HammerRecipeCategory implements RecipeCategory
                 x += 18;
             }
 
-            itemStacks.set(0, new ItemStack(hammerWrapper.getInputs().get(0)));
+            itemStacks.set(0, hammerWrapper.getInputs().get(0));
             for (int i = 0; i < hammerWrapper.getOutputs().size(); i++)
-                itemStacks.set(i + 1, new ItemStack(hammerWrapper.getOutputs().get(i)));
+                itemStacks.set(i + 1, hammerWrapper.getOutputs().get(i));
         }
     }
 }

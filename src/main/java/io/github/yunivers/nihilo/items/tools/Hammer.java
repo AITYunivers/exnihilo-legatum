@@ -49,20 +49,22 @@ public class Hammer extends TemplateToolItem
     public boolean postMine(ItemStack stack, int blockId, int x, int y, int z, LivingEntity miner) {
         if (HammerRegistry.containsBlock(Block.BLOCKS[blockId]))
         {
-            ArrayList<Smashable> rewards = HammerRegistry.getRewards(Block.BLOCKS[blockId]);
+            ArrayList<Smashable> rewards = HammerRegistry.getRewards(Block.BLOCKS[blockId], miner, x, y, z);
             if (!rewards.isEmpty()) {
                 Nihilo.IgnoreNextItemEntity = blockId;
                 for (Smashable reward : rewards) {
                     if (!miner.world.isRemote && miner.world.random.nextFloat() <= reward.chance) {
-                        ItemEntity newItemEntity = new ItemEntity(miner.world, (double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, new ItemStack(reward.getItem(), 1));
+                        for (ItemStack result : reward.getResults()) {
+                            ItemEntity newItemEntity = new ItemEntity(miner.world, (double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, result.copy());
 
-                        double f3 = 0.05F;
-                        newItemEntity.velocityX = miner.world.random.nextGaussian() * f3;
-                        newItemEntity.velocityY = 0.2d;
-                        newItemEntity.velocityZ = miner.world.random.nextGaussian() * f3;
-                        newItemEntity.pickupDelay = 10;
+                            double f3 = 0.05F;
+                            newItemEntity.velocityX = miner.world.random.nextGaussian() * f3;
+                            newItemEntity.velocityY = 0.2d;
+                            newItemEntity.velocityZ = miner.world.random.nextGaussian() * f3;
+                            newItemEntity.pickupDelay = 10;
 
-                        miner.world.spawnEntity(newItemEntity);
+                            miner.world.spawnEntity(newItemEntity);
+                        }
                     }
                 }
             }
@@ -70,4 +72,6 @@ public class Hammer extends TemplateToolItem
 
         return super.postMine(stack, blockId, x, y, z, miner);
     }
+
+
 }
