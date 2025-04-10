@@ -55,25 +55,25 @@ public class HammerRecipeWrapper implements RecipeWrapper
         if (focus == null) {
             return;
         }
-        int xOffset = 0;
-        int yOffset;
-        if (focus.getItem() instanceof BlockItem blockItem && smashable.source == blockItem.getBlock()) {
-            xOffset = 73;
-            yOffset = 3;
-        }
-        else {
+        int xOffset = -1;
+        int yOffset = 0;
+        if (focus.getItem() instanceof BlockItem blockItem && smashable.source == blockItem.getBlock())
+            xOffset = 71;
+        else
+        {
             List<ItemStack> results = smashable.getResults();
-            for (int i = 0; i < results.size(); i++) {
-                if (results.get(i).isItemEqual(focus)) {
+            for (int i = 0; i < results.size(); i++)
+            {
+                if (results.get(i).isItemEqual(focus))
+                {
                     xOffset = 18 * i;
                     break;
                 }
             }
             yOffset = 33;
         }
-        if (xOffset == 0) {
+        if (xOffset == -1)
             return;
-        }
         focusHighlight.draw(minecraft, xOffset, yOffset);
     }
 
