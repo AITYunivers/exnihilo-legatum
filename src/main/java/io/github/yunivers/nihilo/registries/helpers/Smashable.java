@@ -6,10 +6,10 @@ import net.minecraft.item.ItemStack;
 
 public class Smashable
 {
-    public Block source;
-    private ItemStack result;
-    public float chance;
-    public float luckMultiplier;
+    public final Block source;
+    private final ItemStack result;
+    public final float chance;
+    public final float luckMultiplier;
 
     public Smashable(Block source, ItemStack result, float chance, float luckMultiplier)
     {
