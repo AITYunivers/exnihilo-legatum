@@ -104,20 +104,6 @@ public class HammerRegistry extends SimpleRegistry<Smashable>
         // Sandstone
             .accept(nameOf(Block.SANDSTONE), new Smashable(Block.SANDSTONE, new ItemStack(Block.SAND), 1, 0))
 
-        // Info test
-            .accept(nameOf(Block.DIAMOND_BLOCK), new Smashable(Block.DIAMOND_BLOCK, new ItemStack(Block.COAL_ORE), 1, 0) {
-                @Override
-                public @Nullable String getConditions() {
-                    return "This sounds about right.";
-                }
-            })
-            .accept(nameOf(Block.DIAMOND_BLOCK), new Smashable(Block.DIAMOND_BLOCK, new ItemStack(Block.COAL_ORE), 1, 0) {
-                @Override
-                public @Nullable String getConditions() {
-                    return "This sounds about right.";
-                }
-            })
-
         // TODO: Netherrack Gravel
         ;
     }
