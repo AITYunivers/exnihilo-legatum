@@ -1,42 +1,57 @@
 package io.github.yunivers.nihilo.registries.helpers;
 
+import lombok.Getter;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class Smashable
 {
-    public Block source;
-    private Item item;
-    private Block block;
-    public float chance;
-    public float luckMultiplier;
+    public final Block source;
+    @Getter
+    private final ItemStack sourceItemStack;
+    @Getter
+    public final List<ItemStack> results;
+    public final float chance;
+    public final float luckMultiplier;
 
-    public Smashable(Block source, Item item, float chance, float luckMultiplier)
+    public Smashable(Block source, ItemStack result, float chance, float luckMultiplier)
     {
         this.source = source;
-        this.item = item;
+        sourceItemStack = new ItemStack(source);
+        this.results = List.of(result);
         this.chance = chance;
         this.luckMultiplier = luckMultiplier;
     }
 
-    public Smashable(Block source, Block block, float chance, float luckMultiplier)
+    public Smashable(Block source, List<ItemStack> results, float chance, float luckMultiplier)
     {
         this.source = source;
-        this.block = block;
+        sourceItemStack = new ItemStack(source);
+        this.results = results;
         this.chance = chance;
         this.luckMultiplier = luckMultiplier;
     }
 
-    public boolean hasItem()
+    public boolean isValid()
     {
-        return item != null || block != null;
+        return results != null && !results.isEmpty();
     }
 
-    public Item getItem()
-    {
-        if (item != null)
-            return item;
-        else
-            return Item.BLOCK_ITEMS.get(block);
+    /**
+     * Override to make this recipe conditional.
+     */
+    public boolean check(LivingEntity entity, int x, int y, int z) {
+        return true;
+    }
+
+    /**
+     * Override to show some extra text under the recipe explaining its conditions.
+     */
+    public @Nullable String getConditions() {
+        return null;
     }
 }

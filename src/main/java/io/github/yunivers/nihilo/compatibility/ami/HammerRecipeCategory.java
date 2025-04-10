@@ -34,7 +34,7 @@ public class HammerRecipeCategory implements RecipeCategory
 
     @Override
     public @NotNull AMIDrawable getBackground() {
-        return DrawableHelper.createDrawable("assets/nihilo/stationapi/textures/gui/ami/ami_hammer.png", 0, 0, 166, 58);
+        return DrawableHelper.createDrawable("assets/nihilo/stationapi/textures/gui/ami/ami_hammer.png", 2, 3, 160, 54);
     }
 
     @Override
@@ -52,18 +52,18 @@ public class HammerRecipeCategory implements RecipeCategory
         if (recipeWrapper instanceof HammerRecipeWrapper hammerWrapper)
         {
             GuiItemStackGroup itemStacks = recipeLayout.getItemStacks();
-            itemStacks.init(0, true, 73, 3);
+            itemStacks.init(0, true, 71, 0);
 
-            int x = 2;
+            int x = 0;
             for (int i = 0; i < hammerWrapper.getOutputs().size(); i++)
             {
-                itemStacks.init(i + 1, false, x, 36);
+                itemStacks.init(i + 1, false, x, 33);
                 x += 18;
             }
 
-            itemStacks.set(0, new ItemStack(hammerWrapper.getInputs().get(0)));
+            itemStacks.set(0, hammerWrapper.getInputs().get(0));
             for (int i = 0; i < hammerWrapper.getOutputs().size(); i++)
-                itemStacks.set(i + 1, new ItemStack(hammerWrapper.getOutputs().get(i)));
+                itemStacks.set(i + 1, hammerWrapper.getOutputs().get(i));
         }
     }
 }

@@ -8,13 +8,15 @@ import io.github.yunivers.nihilo.registries.events.HammerRegistryEvent;
 import io.github.yunivers.nihilo.registries.helpers.Smashable;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.item.ItemStack;
 import net.modificationstation.stationapi.api.StationAPI;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.mod.entrypoint.EventBusPolicy;
 import net.modificationstation.stationapi.api.registry.*;
 import net.modificationstation.stationapi.api.util.Identifier;
 import net.modificationstation.stationapi.api.util.Namespace;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -24,7 +26,7 @@ import java.util.Objects;
 public class HammerRegistry extends SimpleRegistry<Smashable>
 {
     public static final RegistryKey<Registry<Smashable>> KEY = RegistryKey.ofRegistry(Nihilo.NAMESPACE.id("smashable"));
-    public static final HammerRegistry INSTANCE = Registries.create(KEY, new HammerRegistry(), registry -> new Smashable(null, (Item)null, 0, 0), Lifecycle.experimental());
+    public static final HammerRegistry INSTANCE = Registries.create(KEY, new HammerRegistry(), registry -> null, Lifecycle.experimental());
 
     public HammerRegistry() {
         super(KEY, Lifecycle.experimental(), false);
@@ -41,12 +43,12 @@ public class HammerRegistry extends SimpleRegistry<Smashable>
         return false;
     }
 
-    public static ArrayList<Smashable> getRewards(Block block)
+    public static ArrayList<Smashable> getRewards(Block block, LivingEntity entity, int x, int y, int z)
     {
         ArrayList<Smashable> rewardList = new ArrayList<>();
 
         for (Smashable reward : INSTANCE)
-            if (reward.source == block && reward.hasItem())
+            if (reward.source == block && reward.isValid() && reward.check(entity, x, y, z))
                 rewardList.add(reward);
 
         return rewardList;
@@ -83,23 +85,24 @@ public class HammerRegistry extends SimpleRegistry<Smashable>
     @EventListener
     public static void registerRewards(HammerRegistryEvent event)
     {
+        ItemStack stonePebble = new ItemStack(InitItems.STONE_PEBBLE);
         event.register(Namespace.MINECRAFT)
 
         // Stone
-            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, InitItems.STONE_PEBBLE, 1.00f, 0.0f))
-            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, InitItems.STONE_PEBBLE, 0.75f, 0.1f))
-            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, InitItems.STONE_PEBBLE, 0.75f, 0.1f))
-            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, InitItems.STONE_PEBBLE, 0.50f, 0.1f))
-            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, InitItems.STONE_PEBBLE, 0.25f, 0.1f))
-            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, InitItems.STONE_PEBBLE, 0.05f, 0.1f))
+            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, stonePebble, 1.00f, 0.0f))
+            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, stonePebble, 0.75f, 0.1f))
+            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, stonePebble, 0.75f, 0.1f))
+            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, stonePebble, 0.50f, 0.1f))
+            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, stonePebble, 0.25f, 0.1f))
+            .accept(nameOf(Block.STONE), new Smashable(Block.STONE, stonePebble, 0.05f, 0.1f))
 
         // Break Down Cobblestone -> Gravel -> Sand -> Dust
-            .accept(nameOf(Block.COBBLESTONE), new Smashable(Block.COBBLESTONE, Block.GRAVEL, 1, 0))
-            .accept(nameOf(Block.GRAVEL), new Smashable(Block.GRAVEL, Block.SAND, 1, 0))
-            .accept(nameOf(Block.SAND), new Smashable(Block.SAND, InitBlocks.DUST, 1, 0))
+            .accept(nameOf(Block.COBBLESTONE), new Smashable(Block.COBBLESTONE, new ItemStack(Block.GRAVEL), 1, 0))
+            .accept(nameOf(Block.GRAVEL), new Smashable(Block.GRAVEL, new ItemStack(Block.SAND), 1, 0))
+            .accept(nameOf(Block.SAND), new Smashable(Block.SAND, new ItemStack(InitBlocks.DUST), 1, 0))
 
         // Sandstone
-            .accept(nameOf(Block.SANDSTONE), new Smashable(Block.SANDSTONE, Block.SAND, 1, 0))
+            .accept(nameOf(Block.SANDSTONE), new Smashable(Block.SANDSTONE, new ItemStack(Block.SAND), 1, 0))
 
         // TODO: Netherrack Gravel
         ;
