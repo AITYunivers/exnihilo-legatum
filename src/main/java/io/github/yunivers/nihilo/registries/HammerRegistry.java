@@ -46,7 +46,7 @@ public class HammerRegistry extends SimpleRegistry<Smashable>
         ArrayList<Smashable> rewardList = new ArrayList<>();
 
         for (Smashable reward : INSTANCE)
-            if (reward.source == block && reward.hasItem())
+            if (reward.source == block && reward.hasOutput())
                 rewardList.add(reward);
 
         return rewardList;

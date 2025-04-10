@@ -2,41 +2,30 @@ package io.github.yunivers.nihilo.registries.helpers;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 public class Smashable
 {
     public Block source;
-    private Item item;
-    private Block block;
+    private ItemStack result;
     public float chance;
     public float luckMultiplier;
 
-    public Smashable(Block source, Item item, float chance, float luckMultiplier)
+    public Smashable(Block source, ItemStack result, float chance, float luckMultiplier)
     {
         this.source = source;
-        this.item = item;
+        this.result = result;
         this.chance = chance;
         this.luckMultiplier = luckMultiplier;
     }
 
-    public Smashable(Block source, Block block, float chance, float luckMultiplier)
+    public boolean hasOutput()
     {
-        this.source = source;
-        this.block = block;
-        this.chance = chance;
-        this.luckMultiplier = luckMultiplier;
-    }
-
-    public boolean hasItem()
-    {
-        return item != null || block != null;
+        return result != null;
     }
 
     public Item getItem()
     {
-        if (item != null)
-            return item;
-        else
-            return Item.BLOCK_ITEMS.get(block);
+        return result.getItem();
     }
 }
